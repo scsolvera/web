@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SOLVÈRA</title>
+    <link rel="icon" type="image/png" href="image/solvera-dark.png">
+
+    <!-- Tailwind CSS (via CDN) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Stylesheet Utama -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-gray-50 text-gray-800 antialiased overflow-x-hidden">
+
+   <!-- SECTION 1: HERO / BAGIAN AWAL (Compact & Professional) -->
+<section id="home" class="hero-compact relative flex items-center min-h-screen px-[8%] pt-[110px] pb-[40px] text-white overflow-hidden">
+    <div class="hero-container max-w-[1100px] mx-auto grid grid-cols-1 md:grid-cols-[1.2fr_1fr] gap-8 md:gap-12 items-center z-10">
+        
+        <!-- Sisi Kiri: Teks & Tagline Utama -->
+        <div class="hero-text-content animate-fade-in-up text-center sm:text-left">
+            <br><br>
+            <span class="hero-badge inline-block bg-[#38ef7d]/15 text-[#38ef7d] px-3.5 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider mb-4 border border-[#38ef7d]/30 shadow-sm animate-pulse">
+                <i class="fa-solid fa-sparkles mr-1.5"></i> Solving a New Era with creativity
+            </span>
+            <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold leading-tight mb-5 text-white">
+                Menciptakan Solusi Relevan di <span class="highlight-text text-[#52c41a]">Era Modern</span>
+            </h1>
+            <p class="hero-desc text-base sm:text-lg text-[#d8f3dc] leading-relaxed mb-8">
+                SOLVÈRA hadir untuk menghadirkan solusi inovatif yang relevan di era modernisasi, memanfaatkan limbah menjadi produk fungsional dan berkelanjutan demi kebutuhan masyarakat.
+            </p>
+            
+            <!-- Tombol Aksi Cepat (CTA Buttons) -->
+            <div class="hero-btn-group flex flex-wrap gap-4 justify-center md:justify-start">
+                <a href="#produk" class="btn-primary flex items-center gap-2 bg-[#52c41a] hover:bg-[#73d13d] text-[#0d2818] px-6 py-3 rounded-xl font-bold transition-all duration-300 transform hover:-translate-y-1 shadow-lg hover:shadow-[#52c41a]/40">
+                    <i class="fa-solid fa-bag-shopping"></i> Lihat Koleksi Produk
+                </a>
+                <a href="#latar-belakang" class="btn-secondary flex items-center gap-2 bg-transparent hover:bg-white/10 text-white border-2 border-white/30 hover:border-white px-6 py-3 rounded-xl font-bold transition-all duration-300">
+                    <i class="fa-solid fa-circle-info"></i> Kenali SOLVÈRA
+                </a>
+            </div>
+        </div>
+
+        <!-- Sisi Kanan: Kartu Preview / Visual Unggulan -->
+        <div class="hero-visual-card flex justify-center animate-fade-in">
+            <div class="preview-card-box relative w-full max-w-[380px] h-[320px] bg-white/5 border border-white/10 rounded-2xl overflow-hidden shadow-2xl group transition-all duration-500 hover:shadow-[#38ef7d]/20">
+                <img src="image/produk1.jpg" alt="Produk Unggulan Solvèra" class="hero-preview-img w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110">
+                <div class="preview-badge-floating absolute bottom-4 left-4 bg-black/70 backdrop-blur-md text-white px-4 py-2 rounded-xl text-xs font-semibold border border-white/15 flex items-center gap-2 transition-transform duration-300 group-hover:translate-y-[-2px] animate-[bounce_2.5s_ease-in-out_infinite]">
+                    <span>100% Eco-Friendly</span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+   <!-- NAVIGATOR / NAVBAR -->
+<header class="header" id="navbar">
+    <a href="#home" class="brand-container">
+        <img src="image/solvera.png" alt="Logo Solvèra" class="logo-img" id="logoImg">
+        <div class="brand-text-box flex flex-col">
+            <span class="logo-text">SOLVÈRA</span>
+            <span class="logo-subtext">STUDENT COMPANY</span>
+        </div>
+    </a>
+
+    <!-- CONTAINER KANAN (IKON KERANJANG & HAMBURGER) -->
+    <div class="nav-right-controls">
+        <div class="cart-icon-wrapper" id="cartBtn">
+            <img src="image/cart-icon.png" alt="Keranjang" class="cart-icon-img">
+            <span class="cart-badge animate-[bounce_1s_ease-in-out_infinite] " id="cartCount"></span>
+        </div>
+
+        <!-- Tombol Garis Tiga (Hamburger) -->
+        <button class="menu-toggle hambar" id="menuToggle" aria-label="Buka Menu">
+            <span class="hambar-line"></span>
+            <span class="hambar-line"></span>
+            <span class="hambar-line"></span>
+        </button>
+    </div>
+
+    <nav class="nav-menu" id="navMenu">
+        <ul class="nav-links">
+            <li><a href="#latar-belakang" class="nav-item">Tentang kami</a></li>
+            <li><a href="#produk" class="nav-item">Produk</a></li>
+            <li><a href="#grafik-penjualan" class="nav-item">Grafik Penjualan</a></li>
+            <li><a href="#tim-direksi" class="nav-item">Tim & Direksi</a></li>
+        </ul>
+        <a href="https://wa.me/6285659766900?text=Halo%20SOLV%C3%88RA%2C%20saya%20ingin%20bertanya%20tentang%20produk."
+           target="_blank" rel="noopener" class="nav-wa-btn">
+            <i class="fa-brands fa-whatsapp"></i> Tanya via WA
+        </a>
+    </nav>
+
+    <div class="overlay" id="overlay"></div>
+</header>
+
+ <!-- SECTION 2: TENTANG SOLVERA & VISI MISI -->
+<section id="latar-belakang" class="section bg-grey py-20 px-[8%]">
+    <div class="container max-w-[1100px] mx-auto">
+        <div class="about-header-center text-center max-w-[800px] mx-auto mb-12">
+            <br><br>
+            <span class="section-tag">TENTANG SOLVÈRA</span>
+            <h2 class="section-main-title ">Solusi Kreatif di Era Modern</h2>
+            <p class="about-desc text-gray-600 text-base leading-relaxed mt-4 px-[16%]">
+                Nama <b class="text-[#2F6742] font-bold">SOLVÈRA</b> berasal dari kata ‘Solve’ dan ‘Era’, yang bermakna menciptakan solusi yang relevan di era modernisasi serta mengedepankan kebutuhan masyarakat. Kami adalah perusahaan yang bergerak di bidang pemanfaatan limbah dan merubahnya menjadi barang yang lebih bermanfaat dan bernilai tinggi.
+            </p>
+        </div>
+
+        <div class="solvera-content-grid grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+            <div class="vision-mission-box bg-white p-8 rounded-2xl shadow-sm border border-gray-100 flex flex-col gap-5 text-left">
+                <h3 class="vm-main-title text-xl font-extrabold text-[#223327] border-b border-gray-200 pb-3 flex items-center gap-2">
+                    <i class="fa-solid fa-bullseye text-[#2F6742]"></i> Visi & Misi SOLVÈRA
+                </h3>
+                
+                <div class="vm-block">
+                    <p class="vm-text text-sm sm:text-base text-gray-600 leading-relaxed text-left">
+                        Menjadi perusahaan inovatif yang menghadirkan solusi kreatif, berkelanjutan, berdampak positif bagi lingkungan dan mengutamakan produksi barang yang bersifat fungsional. <b class="text-[#2F6742]">Yaitu, dengan:</b>
+                    </p>
+                </div>
+
+                <div class="vm-block space-y-4 text-left">
+                    <div class="mission-item">
+                        <span class="mission-heading block font-bold text-[#223327] text-sm mb-1">1. Inovasi & Pengolahan Limbah:</span>
+                        <p class="mission-desc text-xs sm:text-sm text-gray-600 leading-relaxed">Memanfaatkan limbah sekitar dengan mengubahnya menjadi produk yang ramah lingkungan.</p>
+                    </div>
+
+                    <div class="mission-item">
+                        <span class="mission-heading block font-bold text-[#223327] text-sm mb-1">2. Pembangunan Branding & Citra Perusahaan:</span>
+                        <p class="mission-desc text-xs sm:text-sm text-gray-600 leading-relaxed">Menciptakan citra perusahaan yang kuat di tengah masyarakat.</p>
+                    </div>
+
+                    <div class="mission-item">
+                        <span class="mission-heading block font-bold text-[#223327] text-sm mb-1">3. Efisiensi Sumber Daya Berkelanjutan:</span>
+                        <p class="mission-desc text-xs sm:text-sm text-gray-600 leading-relaxed">Memanfaatkan sumber daya secara bijak dan efisien demi meminimalisir dampak negatif terhadap lingkungan.</p>
+                    </div>
+
+                    <div class="mission-item">
+                        <span class="mission-heading block font-bold text-[#223327] text-sm mb-1">4. Kualitas & Kreativitas Produk:</span>
+                        <p class="mission-desc text-xs sm:text-sm text-gray-600 leading-relaxed">Memprioritaskan kualitas, kreativitas, dan keberlanjutan dalam setiap produk yang dijual.</p>
+                    </div>
+
+                    <div class="mission-item">
+                        <span class="mission-heading block font-bold text-[#223327] text-sm mb-1">5. Keseimbangan Bisnis & Lingkungan:</span>
+                        <p class="mission-desc text-xs sm:text-sm text-gray-600 leading-relaxed">Menjaga keharmonian antara pertumbuhan bisnis dan kelestarian lingkungan di setiap langkahnya.</p>
+                    </div>
+
+                    <div class="mission-item">
+                        <span class="mission-heading block font-bold text-[#223327] text-sm mb-1">6. Pengalaman & Kepuasan Pelanggan:</span>
+                        <p class="mission-desc text-xs sm:text-sm text-gray-600 leading-relaxed">Menghadirkan produk berkualitas tinggi yang fungsional, estetis, dan memberikan pengalaman terbaik bagi pengguna.</p>
+                    </div>
+
+                    <div class="mission-item">
+                        <span class="mission-heading block font-bold text-[#223327] text-sm mb-1">7. Dampak Sosial Positif:</span>
+                        <p class="mission-desc text-xs sm:text-sm text-gray-600 leading-relaxed">Menjadi penggerak perubahan positif dalam kehidupan sosial melalui produk dan layanan yang bermanfaat.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="features-cards-container flex flex-col gap-5 text-left">
+                <div class="feature-card bg-white p-6 rounded-2xl shadow-sm hover:shadow-md border border-gray-100 transition-all duration-300 group text-left">
+                    <div class="feature-icon-box w-12 h-12 bg-[#AFCCB9]/30 rounded-xl flex items-center justify-center mb-4">
+                        <img src="image/icon1.png" alt="Inovasi & Pemanfaatan Limbah" class="feature-icon w-7 h-7 object-contain">
+                    </div>
+                    <h4 class="feature-card-title text-lg font-bold text-[#223327] mb-2">Pemanfaatan Limbah</h4>
+                    <p class="feature-card-desc text-sm text-gray-600 leading-relaxed">Bergerak aktif dalam pengolahan limbah sekitar untuk diubah menjadi produk fungsional yang bernilai guna tinggi.</p>
+                </div>
+            
+                <div class="feature-card bg-white p-6 rounded-2xl shadow-sm hover:shadow-md border border-gray-100 transition-all duration-300 group text-left">
+                    <div class="feature-icon-box w-12 h-12 bg-[#AFCCB9]/30 rounded-xl flex items-center justify-center mb-4">
+                        <img src="image/icon2.png" alt="Solusi Era Modern" class="feature-icon w-7 h-7 object-contain">
+                    </div>
+                    <h4 class="feature-card-title text-lg font-bold text-[#223327] mb-2">Solusi Era Modern</h4>
+                    <p class="feature-card-desc text-sm text-gray-600 leading-relaxed">Menciptakan inovasi yang relevan dengan kebutuhan masyarakat modern melalui kreativitas tanpa batas.</p>
+                </div>
+            
+                <div class="feature-card bg-white p-6 rounded-2xl shadow-sm hover:shadow-md border border-gray-100 transition-all duration-300 group text-left">
+                    <div class="feature-icon-box w-12 h-12 bg-[#AFCCB9]/30 rounded-xl flex items-center justify-center mb-4">
+                        <img src="image/icon3.png" alt="Tanggung Jawab Ekologis" class="feature-icon w-7 h-7 object-contain">
+                    </div>
+                    <h4 class="feature-card-title text-lg font-bold text-[#223327] mb-2">Tanggung Jawab Ekologis</h4>
+                    <p class="feature-card-desc text-sm text-gray-600 leading-relaxed">Mengutamakan keberlanjutan lingkungan dan produk berkualitas tinggi yang berdampak positif bagi sesama.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- SECTION 3: PRODUK UTAMA -->
+<section id="produk" class="section bg-slate-200 py-20 px-[8%]">
+    <div class="container max-w-[1100px] mx-auto">
+        <div class="section-title-group mb-12 text-center ">
+            <br><br>
+            <span class="section-tag ">KATALOG EKSKLUSIF</span>
+            <h2 class="section-main-title ">Koleksi Produk SOLVÈRA</h2>
+            <p class="section-subtitle inline-flex items-center gap-2 max-w-2xl mx-auto bg-white/70 border border-[#2F6742]/30 text-[#223327] px-4 py-2.5 rounded-lg text-xs sm:text-sm font-medium leading-relaxed mt-3">
+                <i class="fa-solid fa-triangle-exclamation text-[#2F6742]"></i>
+                <span>Jumlah terbatas! Mohon cek ketersediaan melalui WhatsApp.</span>
+            </p>        </div>
+
+        <div class="product-vertical-grid grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+            <!-- Produk 1 -->
+            <div class="product-card-vertical bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100 flex flex-col group" data-id="p1" data-name="Solvéra Eco Tote Bag" data-price="85000" data-img="image/produk1.jpg">
+                <div class="product-card-img-box relative w-full h-[220px] bg-gray-100 overflow-hidden cursor-pointer" onclick="window.location.href='product.html?id=p1'">
+                    <img src="image/produk1.jpg" alt="Solvéra Eco Tote Bag" class="product-vertical-img w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                    <span class="product-badge-holo absolute top-3 left-3 bg-[#2F6742] text-[#8AFFB1] text-[10px] font-bold px-2.5 py-1 rounded-md shadow-md flex items-center gap-1">
+                        <i class="fa-solid fa-fire text-[#8AFFB1] text-[9px]"></i> Terlaris
+                    </span>
+                </div>
+
+                <div class="product-card-content p-5 flex flex-col flex-grow">
+                    <div class="product-rating flex items-center gap-1 text-amber-400 text-xs mb-2 cursor-pointer" onclick="window.location.href='product.html?id=p1'">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <span class="rating-number text-gray-500 text-xs font-semibold ml-1">(5.0)</span>
+                    </div>
+                    <h3 class="product-title-vertical text-lg font-extrabold text-[#223327] hover:text-[#2F6742] transition-colors cursor-pointer mb-1.5" onclick="window.location.href='product.html?id=p1'">
+                        Solvéra Eco Tote Bag
+                    </h3>
+                    <p class="product-short-desc text-xs text-gray-600 mb-3 leading-relaxed flex-grow">Tas ramah lingkungan dari bahan daur ulang pilihan dengan kapasitas luas.</p>
+                    
+                    <a href="product1.html" class="product-read-more text-xs text-red-500 hover:text-red-700 font-normal hover:underline inline-flex items-center gap-1 mb-4">
+                        Selengkapnya <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                    </a>
+
+                    <div class="product-price-action-box mt-auto pt-3 border-t border-gray-100 flex flex-col gap-3">
+                        <p class="product-price-vertical text-lg font-black text-[#223327]">Rp 85.000</p>
+                        
+                        <div class="product-card-actions grid grid-cols-2 gap-2.5 w-full">
+                            <button class="btn-cart-secondary btn-add-only py-2.5 px-3 rounded-xl border-2 border-[#223327] text-[#223327] hover:bg-[#223327]/10 flex items-center justify-center gap-1.5 font-bold text-xs transition-all duration-200">
+                                <i class="fa-solid fa-cart-plus text-sm"></i> Keranjang
+                            </button>
+                            <button class="btn-buy-primary btn-buy-now py-2.5 px-3 bg-[#223327] hover:bg-[#2F6742] text-white rounded-xl font-bold text-xs transition-all duration-200 shadow-md flex items-center justify-center">
+                                Beli
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+
+            <!-- Produk 2 -->
+            <div class="product-card-vertical bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100 flex flex-col group" data-id="p2" data-name="Solvéra Coconut Wallet" data-price="65000" data-img="image/produk2.jpg">
+                <div class="product-card-img-box relative w-full h-[220px] bg-gray-100 overflow-hidden cursor-pointer" onclick="window.location.href='product.html?id=p2'">
+                    <img src="image/produk2.jpg" alt="Solvéra Coconut Wallet" class="product-vertical-img w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                    <span class="product-badge-holo absolute top-3 left-3 bg-[#2F6742] text-[#8AFFB1] text-[10px] font-bold px-2.5 py-1 rounded-md shadow-md flex items-center gap-1">
+                        <i class="fa-solid fa-sparkles text-[#8AFFB1] text-[9px]"></i> Baru
+                    </span>
+                </div>
+
+                <div class="product-card-content p-5 flex flex-col flex-grow">
+                    <div class="product-rating flex items-center gap-1 text-amber-400 text-xs mb-2 cursor-pointer" onclick="window.location.href='product.html?id=p2'">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star-half-stroke"></i>
+                        <span class="rating-number text-gray-500 text-xs font-semibold ml-1">(4.8)</span>
+                    </div>
+                    <h3 class="product-title-vertical text-lg font-extrabold text-[#223327] hover:text-[#2F6742] transition-colors cursor-pointer mb-1.5" onclick="window.location.href='product.html?id=p2'">
+                        Solvéra Coconut Wallet
+                    </h3>
+                    <p class="product-short-desc text-xs text-gray-600 mb-3 leading-relaxed flex-grow">Dompet minimalis unik berbahan limbah tempurung kelapa yang kuat.</p>
+                    
+                    <a href="product2.html" class="product-read-more text-xs text-red-500 hover:text-red-700 font-normal hover:underline inline-flex items-center gap-1 mb-4">
+                        Selengkapnya <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                    </a>
+
+                    <div class="product-price-action-box mt-auto pt-3 border-t border-gray-100 flex flex-col gap-3">
+                        <p class="product-price-vertical text-lg font-black text-[#223327]">Rp 65.000</p>
+                        
+                        <div class="product-card-actions grid grid-cols-2 gap-2.5 w-full">
+                            <button class="btn-cart-secondary btn-add-only py-2.5 px-3 rounded-xl border-2 border-[#223327] text-[#223327] hover:bg-[#223327]/10 flex items-center justify-center gap-1.5 font-bold text-xs transition-all duration-200">
+                                <i class="fa-solid fa-cart-plus text-sm"></i> Keranjang
+                            </button>
+                            <button class="btn-buy-primary btn-buy-now py-2.5 px-3 bg-[#223327] hover:bg-[#2F6742] text-white rounded-xl font-bold text-xs transition-all duration-200 shadow-md flex items-center justify-center">
+                                Beli
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Produk 3 -->
+            <div class="product-card-vertical bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100 flex flex-col group" data-id="p3" data-name="Solvéra Eco Pouch" data-price="30000" data-img="image/produk3.jpg">
+                <div class="product-card-img-box relative w-full h-[220px] bg-gray-100 overflow-hidden cursor-pointer" onclick="window.location.href='product.html?id=p3'">
+                    <img src="image/produk3.jpg" alt="Solvéra Eco Pouch" class="product-vertical-img w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                    <span class="product-badge-holo absolute top-3 left-3 bg-[#2F6742] text-[#8AFFB1] text-[10px] font-bold px-2.5 py-1 rounded-md shadow-md flex items-center gap-1">
+                        <i class="fa-solid fa-fire text-[#8AFFB1] text-[9px]"></i> Recomended
+                    </span>
+                </div>
+
+                <div class="product-card-content p-5 flex flex-col flex-grow">
+                    <div class="product-rating flex items-center gap-1 text-amber-400 text-xs mb-2 cursor-pointer" onclick="window.location.href='product.html?id=p3'">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <span class="rating-number text-gray-500 text-xs font-semibold ml-1">(5.0)</span>
+                    </div>
+                    <h3 class="product-title-vertical text-lg font-extrabold text-[#223327] hover:text-[#2F6742] transition-colors cursor-pointer mb-1.5" onclick="window.location.href='product.html?id=p3'">
+                        Solvéra Eco Pouch
+                    </h3>
+                    <p class="product-short-desc text-xs text-gray-600 mb-3 leading-relaxed flex-grow">Pouch ramah lingkungan dari bahan daur ulang pilihan dengan kapasitas yang luas.</p>
+                    
+                    <a href="product3.html" class="product-read-more text-xs text-red-500 hover:text-red-700 font-normal hover:underline inline-flex items-center gap-1 mb-4">
+                        Selengkapnya <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                    </a>
+
+                    <div class="product-price-action-box mt-auto pt-3 border-t border-gray-100 flex flex-col gap-3">
+                        <p class="product-price-vertical text-lg font-black text-[#223327]">Rp 30.000</p>
+                        
+                        <div class="product-card-actions grid grid-cols-2 gap-2.5 w-full">
+                            <button class="btn-cart-secondary btn-add-only py-2.5 px-3 rounded-xl border-2 border-[#223327] text-[#223327] hover:bg-[#223327]/10 flex items-center justify-center gap-1.5 font-bold text-xs transition-all duration-200">
+                                <i class="fa-solid fa-cart-plus text-sm"></i> Keranjang
+                            </button>
+                            <button class="btn-buy-primary btn-buy-now py-2.5 px-3 bg-[#223327] hover:bg-[#2F6742] text-white rounded-xl font-bold text-xs transition-all duration-200 shadow-md flex items-center justify-center">
+                                Beli
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- CART DRAWER SAMPLING KANAN (DESAIN BARU SESUAI SCREENSHOT REFERENSI) -->
+<div class="cart-drawer-overlay" id="cartModal">
+    <div class="cart-drawer">
+        <!-- Header Drawer -->
+        <div class="cart-drawer-header">
+            <h3 class="cart-drawer-title">
+                <i class="fa-solid fa-[#2F6742] fa-bag-shopping text-[#2F6742]"></i> Keranjang Anda
+            </h3>
+            <button class="close-cart-btn text-gray-400 hover:text-gray-600 transition-colors" id="closeCart">&times;</button>
+        </div>
+        
+        <!-- Daftar Item Keranjang -->
+        <div class="cart-drawer-body" id="cartItems">
+            <!-- Tampilan Kosong (Akan diisi secara dinamis via JS) -->
+        </div>
+
+        <!-- Footer Checkout Drawer -->
+        <div class="cart-drawer-footer">
+            <div class="cart-total-row flex justify-between items-center mb-4">
+                <span class="text-base font-bold text-gray-900">Total Pembelian</span>
+                <span id="cartTotalPrice" class="text-base font-extrabold text-[#2F6742]">Rp 0</span>
+            </div>
+            <button class="btn-checkout w-full bg-[#2F6742] hover:bg-[#223327] text-white py-3.5 rounded-xl font-bold text-sm transition-all duration-200 shadow-md flex items-center justify-center" id="checkoutBtn">
+                Lanjut ke checkout
+            </button>
+        </div>
+    </div>
+</div>
+
+<!-- SECTION 4: GRAFIK PENJUALAN INTERAKTIF -->
+<section id="grafik-penjualan" class="section bg-hologram-dark relative py-20 px-[8%] overflow-hidden">
+    <div class="container max-w-[1100px] mx-auto relative z-10">
+        <div class="chart-title-group mb-8  ">
+            <br><br>
+            <span class="section-tag text-[#8AFFB1]">PERFORMA BISNIS</span>
+            <h2 class="section-main-title title-long text-white">Catatan Omset & Pertumbuhan Penjualan</h2>            <p class="chart-subtitle text-emerald-200/70 text-sm sm:text-base leading-relaxed mt-2">
+                Visualisasi pergerakan omset dan pertumbuhan volume penjualan produk SOLVÈRA periode Januari hingga Mei.
+            </p>
+        </div>
+
+        <div class="chart-header-holo flex flex-wrap justify-between items-end gap-4 mb-8 pb-4 border-b border-white/10">
+            <div class="chart-stats-left flex gap-8">
+                <div class="stat-item flex flex-col gap-1">
+                    <span class="stat-label text-[11px] font-semibold text-emerald-400/80 uppercase tracking-wider">Omset Tertinggi</span>
+                    <span class="stat-value-holo highlight-neon text-lg font-bold text-[#38ef7d]" id="statMax">Rp 12.500.000</span>
+                </div>
+                <div class="stat-item flex flex-col gap-1">
+                    <span class="stat-label text-[11px] font-semibold text-emerald-400/80 uppercase tracking-wider">Rata-Rata / Bulan</span>
+                    <span class="stat-value-holo text-lg font-bold text-white" id="statAvg">Rp 8.200.000</span>
+                </div>
+            </div>
+
+            <div class="chart-update-right flex flex-col items-end gap-1">
+                <span class="stat-label text-[11px] font-semibold text-emerald-400/80 uppercase tracking-wider">Terakhir Diubah</span>
+                <span class="stat-value-update text-xs text-emerald-100 flex items-center gap-1.5 bg-white/5 px-3 py-1 rounded-full border border-white/10">
+                    <i class="fa-regular fa-clock text-[#38ef7d]"></i> Mei 2026
+                </span>
+            </div>
+        </div>
+
+        <div class="chart-wrapper flex h-[280px] relative pt-12">
+            <div id="chartInfo" class="chart-info" role="status" aria-live="polite">
+                <strong class="ci-month"></strong>
+                <span class="ci-value"></span>
+                <span class="ci-unit"></span>
+            </div>
+            <div class="chart-bars-container-holo flex-grow flex justify-around items-end relative border-b-2 border-[#38ef7d]/30">
+                <div class="chart-grid-lines absolute inset-0 flex flex-col justify-between pointer-events-none">
+                    <div class="grid-line-holo w-full h-[1px] bg-white/5"></div>
+                    <div class="grid-line-holo w-full h-[1px] bg-white/5"></div>
+                    <div class="grid-line-holo w-full h-[1px] bg-white/5"></div>
+                </div>
+
+                <div class="chart-bar-group flex flex-col items-center h-full justify-end z-10 w-[15%]">
+                    <div class="bar-holo w-full max-w-[48px] rounded-t-lg cursor-pointer transition-all duration-300 relative" style="--height: 45%;" data-month="Januari" data-value="Rp 5.200.000" data-unit="102">
+                        <span class="bar-top-value absolute -top-6 left-1/2 -translate-x-1/2 text-[11px] font-bold text-lime-400 whitespace-nowrap">5.2 Jt</span>
+                        <div class="chart-tooltip border border-[#38ef7d]/30">Januari:<br class="md:hidden"> Rp 5.200.000</div>
+                    </div>
+                    <span class="bar-label-holo mt-3 text-xs sm:text-sm font-bold text-[#d8f3dc]">Jan</span>
+                </div>
+                
+                <div class="chart-bar-group flex flex-col items-center h-full justify-end z-10 w-[15%]">
+                    <div class="bar-holo w-full max-w-[48px] rounded-t-lg cursor-pointer transition-all duration-300 relative" style="--height: 60%;" data-month="Februari" data-value="Rp 7.500.000" data-unit="145">
+                        <span class="bar-top-value absolute -top-6 left-1/2 -translate-x-1/2 text-[11px] font-bold text-lime-400 whitespace-nowrap">7.5 Jt</span>
+                        <div class="chart-tooltip border border-[#38ef7d]/30">Februari:<br class="md:hidden"> Rp 7.500.000</div>
+                    </div>
+                    <span class="bar-label-holo mt-3 text-xs sm:text-sm font-bold text-[#d8f3dc]">Feb</span>
+                </div>
+                
+                <div class="chart-bar-group flex flex-col items-center h-full justify-end z-10 w-[15%]">
+                    <div class="bar-holo w-full max-w-[48px] rounded-t-lg cursor-pointer transition-all duration-300 relative" style="--height: 80%;" data-month="Maret" data-value="Rp 9.800.000" data-unit="188">
+                        <span class="bar-top-value absolute -top-6 left-1/2 -translate-x-1/2 text-[11px] font-bold text-lime-400 whitespace-nowrap">9.8 Jt</span>
+                        <div class="chart-tooltip border border-[#38ef7d]/30">Maret:<br class="md:hidden"> Rp 9.800.000</div>
+                    </div>
+                    <span class="bar-label-holo mt-3 text-xs sm:text-sm font-bold text-[#d8f3dc]">Mar</span>
+                </div>
+                
+                <div class="chart-bar-group flex flex-col items-center h-full justify-end z-10 w-[15%]">
+                    <div class="bar-holo w-full max-w-[48px] rounded-t-lg cursor-pointer transition-all duration-300 relative" style="--height: 65%;" data-month="April" data-value="Rp 8.000.000" data-unit="155">
+                        <span class="bar-top-value absolute -top-6 left-1/2 -translate-x-1/2 text-[11px] font-bold text-lime-400 whitespace-nowrap">8.0 Jt</span>
+                        <div class="chart-tooltip border border-[#38ef7d]/30">April:<br class="md:hidden"> Rp 8.000.000</div>
+                    </div>
+                    <span class="bar-label-holo mt-3 text-xs sm:text-sm font-bold text-[#d8f3dc]">Apr</span>
+                </div>
+                
+                <div class="chart-bar-group flex flex-col items-center h-full justify-end z-10 w-[15%]">
+                    <div class="bar-holo w-full max-w-[48px] rounded-t-lg cursor-pointer transition-all duration-300 relative" style="--height: 100%;" data-month="Mei" data-value="Rp 12.500.000" data-unit="242">
+                        <span class="bar-top-value absolute -top-6 left-1/2 -translate-x-1/2 text-[11px] font-bold text-lime-400 whitespace-nowrap">12.5 Jt</span>
+                        <div class="chart-tooltip border border-[#38ef7d]/30">Mei:<br class="md:hidden"> Rp 12.500.000</div>
+                    </div>
+                    <span class="bar-label-holo mt-3 text-xs sm:text-sm font-bold text-[#d8f3dc]">Mei</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- SECTION 5: TIM / DIREKSI -->
+<section id="tim-direksi" class="section bg-grey py-20 px-[8%]">
+    <div class="container max-w-[1100px] mx-auto">
+        <div class="mb-10 text-center ">
+            <br><br>
+            <span class="section-tag">OUR TEAM</span>
+            <h2 class="section-main-title ">Struktur Organisasi & Direksi</h2>
+            <p class="text-gray-500 text-sm mt-2">Tim berdedikasi di balik inovasi dan keberlanjutan SOLVÈRA.</p>
+        </div>
+        <div class="team-grid grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+            <div class="team-card bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 flex flex-col text-center border border-gray-100 group">
+                <div class="team-img-box w-full h-[220px] bg-gray-200 overflow-hidden relative">
+                    <img src="ceo.jpg" alt="Foto CEO" class="team-img w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                </div>
+                <div class="team-info p-5 flex flex-col justify-center flex-grow">
+                    <h3 class="team-name text-base font-bold text-gray-900">Nama CEO</h3>
+                    <p class="team-position text-xs font-semibold text-[#1e4620]">Chief Executive Officer (CEO)</p>
+                </div>
+            </div>
+            <div class="team-card bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 flex flex-col text-center border border-gray-100 group">
+                <div class="team-img-box w-full h-[220px] bg-gray-200 overflow-hidden relative">
+                    <img src="sekretaris.jpg" alt="Foto Sekretaris" class="team-img w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                </div>
+                <div class="team-info p-5 flex flex-col justify-center flex-grow">
+                    <h3 class="team-name text-base font-bold text-gray-900">Nama Sekretaris</h3>
+                    <p class="team-position text-xs font-semibold text-[#1e4620]">Secretary</p>
+                </div>
+            </div>
+            <div class="team-card bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 flex flex-col text-center border border-gray-100 group">
+                <div class="team-img-box w-full h-[220px] bg-gray-200 overflow-hidden relative">
+                    <img src="hrd.jpg" alt="Foto HRD" class="team-img w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                </div>
+                <div class="team-info p-5 flex flex-col justify-center flex-grow">
+                    <h3 class="team-name text-base font-bold text-gray-900">Nama HRD</h3>
+                    <p class="team-position text-xs font-semibold text-[#1e4620]">Director of HRD</p>
+                </div>
+            </div>
+            <div class="team-card bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 flex flex-col text-center border border-gray-100 group">
+                <div class="team-img-box w-full h-[220px] bg-gray-200 overflow-hidden relative">
+                    <img src="marketing.jpg" alt="Foto Marketing" class="team-img w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                </div>
+                <div class="team-info p-5 flex flex-col justify-center flex-grow">
+                    <h3 class="team-name text-base font-bold text-gray-900">Nama Marketing</h3>
+                    <p class="team-position text-xs font-semibold text-[#1e4620]">Director of Marketing</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER UTAMA -->
+<footer class="footer bg-[#0d0d0d] text-white pt-16 pb-6 px-[8%] border-t-2 border-[#1a3a1d]">
+    <div class="footer-container max-w-[1200px] mx-auto grid grid-cols-1 md:grid-cols-[1.3fr_1.2fr_1fr] gap-10 pb-10 border-b border-slate-400">
+        <div class="footer-col footer-about">
+            <div class="footer-brand flex items-center gap-4 mb-4">
+                <img src="image/solvera.png" alt="Logo Solvèra" class="footer-logo h-12 w-auto object-contain">
+                <div class="footer-brand-text">
+                    <h3 class="text-xl font-extrabold tracking-wider leading-tight">SOLVÈRA</h3>
+                    <span class="text-xs font-semibold text-green-300 uppercase tracking-widest">Student Company</span>
+                </div>
+            </div>
+            <p class="footer-desc text-gray-300 text-sm leading-relaxed">
+                SOLVÈRA menghadirkan produk inovatif eco-fashion berbahan dasar limbah ramah lingkungan demi masa depan bumi yang berkelanjutan.
+            </p>
+        </div>
+
+        <div class="footer-col footer-contact">
+            <h4 class="text-lg font-bold text-white mb-5 relative inline-block after:content-[''] after:absolute after:-bottom-2 after:left-0 after:w-8 after:h-0.5 after:bg-[#1e4620] after:rounded-full">Contact Us</h4>
+            <ul class="contact-list flex flex-col gap-3.5 text-sm text-gray-300">
+                <li class="flex items-start gap-3">
+                    <i class="fa-solid fa-location-dot contact-icon text-[#38ef7d] mt-1 text-base"></i>
+                    <span>Jl. A.H. Nasution No. 27, Kelurahan Pasir Endah, Kecamatan Ujungberung, Kota Bandung, Jawa Barat 40619</span>
+                </li>
+                <li class="flex items-center gap-3">
+                    <i class="fa-solid fa-phone contact-icon text-[#38ef7d] text-base"></i>
+                    <span>+62 812-3456-7890</span>
+                </li>
+                <li class="flex items-center gap-3">
+                    <i class="fa-solid fa-envelope contact-icon text-[#38ef7d] text-base"></i>
+                    <span>scsolvera@gmail.com</span>
+                </li>
+            </ul>
+        </div>
+
+        <div class="footer-col footer-social">
+            <h4 class="text-lg font-bold text-white mb-5 relative inline-block after:content-[''] after:absolute after:-bottom-2 after:left-0 after:w-8 after:h-0.5 after:bg-[#1e4620] after:rounded-full">Follow Us</h4>
+            <p class="social-text text-gray-300 text-sm mb-4">Dapatkan info & update produk terbaru kami di media sosial:</p>
+            <div class="social-links flex gap-4">
+                <a href="#" target="_blank" aria-label="YouTube" class="social-btn youtube w-11 h-11 rounded-full bg-zinc-900 text-white flex items-center justify-center text-lg transition-all duration-300 hover:bg-red-600 hover:scale-110 shadow-lg hover:shadow-red-600/50">
+                    <i class="fa-brands fa-youtube"></i>
+                </a>
+                <a href="#" target="_blank" aria-label="Instagram" class="social-btn instagram w-11 h-11 rounded-full bg-zinc-900 text-white flex items-center justify-center text-lg transition-all duration-300 hover:bg-gradient-to-tr hover:from-amber-500 hover:via-rose-500 hover:to-purple-600 hover:scale-110 shadow-lg hover:shadow-rose-500/50">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+                <a href="#" target="_blank" aria-label="TikTok" class="social-btn tiktok w-11 h-11 rounded-full bg-zinc-900 text-white flex items-center justify-center text-lg transition-all duration-300 hover:bg-cyan-400 hover:text-black hover:scale-110 shadow-lg hover:shadow-cyan-400/50">
+                    <i class="fa-brands fa-tiktok"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer-bottom text-center pt-6 text-gray-300 text-xs">
+        <p>&copy; 2026 SOLVÈRA Student Company. All Rights Reserved.</p>
+    </div>
+</footer>
+
+    <script src="scripts.js"></script>
+</body>
+</html>

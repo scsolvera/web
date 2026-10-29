@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - Solvèra</title>
+
+    <!-- Tailwind CSS (via CDN) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link rel="stylesheet" href="checkout.css">
+</head>
+<body class="checkout-body bg-gray-100 flex items-center justify-center min-h-screen p-5">
+
+    <div class="checkout-container bg-white w-full max-w-[550px] p-8 rounded-2xl shadow-xl flex flex-col gap-6 border border-gray-100 animate-fade-in">
+        <h2 class="text-2xl font-extrabold text-[#1e4620] text-center flex items-center justify-center gap-2">
+            <i class="fa-solid fa-receipt"></i> Konfirmasi Pesanan Solvèra
+        </h2>
+        
+        <!-- Ringkasan Barang yang Dibeli -->
+        <div class="checkout-section bg-gray-50 p-5 rounded-xl border border-gray-200/80">
+            <h3 class="text-base font-bold text-gray-800 mb-3 flex items-center gap-2">
+                <i class="fa-solid fa-shopping-bag text-[#1e4620]"></i> Rincian Belanjaan
+            </h3>
+            <div id="checkoutItemsList" class="space-y-2 mb-3"></div>
+            <div class="checkout-total-row flex justify-between items-center text-lg font-extrabold text-gray-900 pt-3 border-t border-dashed border-gray-300">
+                <strong>Total Pembayaran:</strong>
+                <span id="checkoutTotalPrice" class="text-[#1e4620] text-xl">Rp 0</span>
+            </div>
+        </div>
+
+        <!-- Form Data Pembeli & Pengiriman -->
+        <div class="checkout-section bg-gray-50 p-5 rounded-xl border border-gray-200/80">
+            <h3 class="text-base font-bold text-gray-800 mb-4 flex items-center gap-2">
+                <i class="fa-solid fa-[#1e4620] fa-truck-fast text-[#1e4620]"></i> Data Pengiriman
+            </h3>
+            
+            <div class="form-group mb-4">
+                <label for="buyerName" class="block text-xs font-bold text-gray-700 uppercase mb-1.5">Nama Penerima:</label>
+                <input type="text" id="buyerName" placeholder="Masukkan nama lengkap kamu" class="w-full p-3 border border-gray-300 rounded-xl text-sm focus:outline-none focus:border-[#1e4620] focus:ring-2 focus:ring-[#1e4620]/20 transition-all">
+            </div>
+
+            <div class="form-group mb-4">
+                <label class="block text-xs font-bold text-gray-700 uppercase mb-2">Metode Pengambilan:</label>
+                <div class="radio-group flex gap-5 text-sm font-semibold text-gray-700">
+                    <label class="flex items-center gap-2 cursor-pointer hover:text-[#1e4620]">
+                        <input type="radio" name="shippingMethod" value="Ambil di Dupat" checked class="accent-[#1e4620]"> Ambil di Dupat
+                    </label>
+                    <label class="flex items-center gap-2 cursor-pointer hover:text-[#1e4620]">
+                        <input type="radio" name="shippingMethod" value="Diantar ke Rumah" class="accent-[#1e4620]"> Diantar ke Rumah
+                    </label>
+                </div>
+            </div>
+
+            <!-- Input Alamat -->
+            <div class="form-group" id="addressGroup" style="display: none;">
+                <label for="buyerAddress" class="block text-xs font-bold text-gray-700 uppercase mb-1.5">Alamat Lengkap:</label>
+                <textarea id="buyerAddress" placeholder="Masukkan jalan, nomor rumah, patokan, dll" class="w-full p-3 border border-gray-300 rounded-xl text-sm h-24 focus:outline-none focus:border-[#1e4620] focus:ring-2 focus:ring-[#1e4620]/20 transition-all"></textarea>
+            </div>
+        </div>
+
+        <!-- Tombol Kirim ke WhatsApp -->
+        <button class="btn-whatsapp w-full bg-[#25d366] hover:bg-[#1ebc57] text-white py-4 rounded-xl text-base font-bold shadow-lg hover:shadow-green-500/30 transition-all duration-300 flex items-center justify-center gap-2 cursor-pointer transform hover:-translate-y-0.5" id="sendWhatsAppBtn">
+            <i class="fa-brands fa-whatsapp text-xl"></i> Kirim Pesanan ke WhatsApp
+        </button>
+        <a href="index.html" class="back-link text-center text-sm font-semibold text-gray-500 hover:text-[#1e4620] transition-colors flex items-center justify-center gap-1">
+            <i class="fa-solid fa-arrow-left"></i> Kembali ke Beranda
+        </a>
+    </div>
+
+    <script src="checkout.js"></script>
+</body>
+</html>
